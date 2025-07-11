@@ -2,7 +2,7 @@
 // fetch frases do servidor
 
 
-let frasesArray = []
+ const frasesArray = []
 
 fetch('https://bingo-servidor.onrender.com/frases')
   .then(res => res.json())
@@ -66,7 +66,7 @@ const buttonBingo =  document.getElementById("buttonBingo")
 
 buttonBingo.addEventListener("click", () => {
 
-bingoSection.innerHTML = ""
+/* bingoSection.innerHTML = "" */
 
 newBingo()
 
