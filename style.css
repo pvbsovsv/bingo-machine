@@ -40,3 +40,43 @@ main div button{
     font-weight: 600;
     font-size: 1.1em;
 } 
+
+
+#bingo-section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.frase-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8439351;
+    align-items: center;
+}
+
+.frase-container:last-of-type {
+    border-bottom: 0px;
+}
+
+
+.frase-cliente{
+    padding: 14px;
+    font-size: large;
+    font-weight: 600;
+    color: #2d3436;
+
+}
+
+.base-tickbox{
+    height: 50px;
+    width: 50px;
+    border: solid 1px #e84393;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
