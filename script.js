@@ -66,7 +66,7 @@ const buttonBingo =  document.getElementById("buttonBingo")
 
 buttonBingo.addEventListener("click", () => {
 
-/* bingoSection.innerHTML = "" */
+bingoSection.innerHTML = ""
 
 newBingo()
 
