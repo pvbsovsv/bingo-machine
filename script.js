@@ -4,7 +4,11 @@ const port = 3000
 
 app.get('/', (req, res) => {
   
-    res.send(console.log("works!"))
+    
+    fetch('https://bingo-servidor.onrender.com/')
+    
+    
+    res.send(console.log("server online"))
 })
 
 app.listen(port, () => {
