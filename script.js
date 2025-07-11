@@ -25,6 +25,7 @@ fetch('https://bingo-servidor.onrender.com/frases')
 
 /* bingo function */
 let bingoSection = document.getElementById("bingo-section")
+
 function newBingo() {
   
   console.log(frasesArray[getRandomInt(frasesArray.length)])
