@@ -24,7 +24,7 @@ fetch('https://bingo-servidor.onrender.com/frases')
 }
 
 /* bingo function */
-let bingoSection = document.getElementById("bingo-section")
+let bingoSection = document.querySelector("main div")
 
 function newBingo() {
   
@@ -36,21 +36,21 @@ function newBingo() {
   for (let i = 0; i <= numFrases-1; i++) {
     let fraseContainer = document.createElement("div")
     let fraseCliente = document.createElement("p")
-    let tickbox = document.createElement("button")
+    /* let tickbox = document.createElement("button") */
       /* generamos container para cada frase */
       
       bingoSection.append(fraseContainer)
       
       /* frase de cliente y tick appended al container */
       fraseContainer.append(fraseCliente)
-      fraseContainer.append(tickbox)
+      /* fraseContainer.append(tickbox) */
 
       /* juntamos frase aleatoria del array */
 
       fraseCliente.innerHTML = frasesArray[getRandomInt(frasesArray.length)]
       
       /* adicionamos clases  a elementos nuevos */
-      tickbox.classList.add("base-tickbox")
+     /*  tickbox.classList.add("base-tickbox") */
       fraseCliente.classList.add("frase-cliente")
       fraseContainer.classList.add("frase-container")
     }
