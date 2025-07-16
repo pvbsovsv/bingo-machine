@@ -77,6 +77,14 @@ main div button:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: solid 0.5px #ffd97931;
+    
+}
+
+.input-container:last-of-type{
+
+    border-bottom: none;
+    
 }
 
 .frase-cliente{
@@ -84,7 +92,8 @@ main div button:hover {
     font-size: 16px;
     font-weight: 400;
     color: #ffda79;
-
+    width: 70%;
+    
 }
 
 .tickbox{
