@@ -124,7 +124,29 @@ buttonAdd.addEventListener("click", () => {
 
   addNewSentence()
 
-})
+});
+
+
+
+/* 
+// deleting senteces BETA (only for admin)
+
+function removeSentence(index) {
+  fetch(`https://your-server-url/frases/${index}`, {
+    method: 'DELETE'
+  })
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data => {
+    alert(data.message);
+    // Optionally refresh the list of frases or update the UI
+  })
+  .catch(error => {
+    alert(`Error eliminando la frase: ${error.message}`);
+  });
+} */
 
 
 
