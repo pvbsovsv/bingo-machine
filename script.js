@@ -100,20 +100,21 @@ function addNewSentence() {
       frase: newFrase  // <- this is the key name the server expects
     })
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("No se pudo enviar la frase.");
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log("Frase añadida con éxito:", data);
-    alert("✅ Frase añadida con éxito");
-  })
-  .catch(error => {
-    console.error("Error al enviar la frase:", error);
-    alert("❌ Hubo un error al enviar la frase.");
-  });
+     .then(response => {
+      console.log("Status code:", response.status);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Frase añadida con éxito:", data);
+      alert("✅ Frase añadida con éxito");
+    })
+    .catch(error => {
+      console.error("Error al enviar la frase:", error);
+      alert(`❌ Hubo un error al enviar: ${error.message}`);
+    });
 }
 
 
