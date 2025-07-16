@@ -24,7 +24,7 @@ fetch('https://bingo-servidor.onrender.com/frases')
 }
 
 /* bingo function */
-let bingoSection = document.querySelector("main div")
+let bingoSection = document.querySelector("#bingo-section")
 
 function newBingo() {
   
@@ -33,26 +33,32 @@ function newBingo() {
 
   /* iteracion para generar las secciones */
   
+  /* generamos container para cada frase */
+  const formContainer = document.createElement("form")
+  
   for (let i = 0; i <= numFrases-1; i++) {
-    let fraseContainer = document.createElement("div")
-    let fraseCliente = document.createElement("p")
-    /* let tickbox = document.createElement("button") */
-      /* generamos container para cada frase */
+    const inputContainer = document.createElement("div")
+    let fraseCliente = document.createElement("label")
+    const tickbox = document.createElement("input")
+    tickbox.setAttribute("type", "checkbox")
+
+   
       
-      bingoSection.append(fraseContainer)
+      bingoSection.append(formContainer)
       
       /* frase de cliente y tick appended al container */
-      fraseContainer.append(fraseCliente)
-      /* fraseContainer.append(tickbox) */
+      formContainer.append(inputContainer)
+      inputContainer.append(fraseCliente)
+      inputContainer.append(tickbox)
+      inputContainer.classList.add("input-container")
 
       /* juntamos frase aleatoria del array */
 
       fraseCliente.innerHTML = frasesArray[getRandomInt(frasesArray.length)]
-      
       /* adicionamos clases  a elementos nuevos */
-     /*  tickbox.classList.add("base-tickbox") */
+      tickbox.classList.add("tickbox")
       fraseCliente.classList.add("frase-cliente")
-      fraseContainer.classList.add("frase-container")
+      formContainer.classList.add("form-container")
     }
 
     

@@ -1,83 +1,109 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
-
+    height: 100vh;
+    width: 100vw;
+    background-color: #40407a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 
 main {
+    height: 80vh;
+    width: 90vw;
+    background-color: #2c2c54;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: #ff5e57;
+    flex-direction: column;
+    font-family: Silkscreen, Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+
 }
 
 main div {
-    background-color: #ff3f34;
-    height: 350px;
-    width: 350px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* spacing between buttons */
 
 }
 
-main div button{
-    height: 50px;
-    width: 180px;
-    border: solid 3px white;
-    color: white;
-    background-color: #ffffff00;
-    border-radius: 15px;
-    margin:  10px 0px;
-    font-weight: 600;
-    font-size: 1.1em;
+main h1{
+    color: #ffda79;
 } 
 
 
-#bingo-section{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 50px;
+
+main div button{
+    height: 100px;
+    width: 180px;
+    border: solid 3px #ffda79;
+    color: #ffda79;
+    background-color: #ffffff00;
+    border-radius: 15px;
+    margin:  10px;
+    font-weight: 600;
+    font-size: 1.1em;
+    font-family: Silkscreen, 'Courier New', Courier, monospace;
+} 
+
+
+main div button:hover {
+    color: #ffd97995;
+    border-color: #ffd97995;
+} 
+
+
+#bingo-section {
+    font-size: 0.9em;
+    overflow: scroll;
+    width: 100%;
+
 }
 
-.frase-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-bottom: 1px solid #e8439351;
-    align-items: center;
+
+
+.form-container{
+    padding: 14px 16px;
+    margin: 10px;
+    width: 100%;
+    
 }
 
-.frase-container:last-of-type {
+.form-container:last-of-type {
     border-bottom: 0px;
+
 }
 
 
 .frase-cliente{
-    padding: 14px;
-    font-size: large;
-    font-weight: 600;
-    color: #2d3436;
+    margin: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffda79;
 
 }
 
-.base-tickbox{
-    height: 50px;
-    width: 50px;
-    border: solid 1px #e84393;
-    border-radius: 10px;
-    background-color: white;
+.tickbox{
+    min-height: 20px;
+    max-height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    border: solid 1px #ffda79;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+
 }
 
+.input-containter{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
