@@ -36,7 +36,7 @@ function newBingo() {
 
   // Check: avoid requesting more phrases than exist
   if (numFrases > frasesArray.length) {
-    alert("No hay suficientes frases únicas en el array.");
+    alert("No hay suficientes frases. Pide menos");
     return;
   }
 
