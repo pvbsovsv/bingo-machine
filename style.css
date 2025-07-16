@@ -78,6 +78,7 @@ main div button:hover {
     flex-direction: row;
     justify-content: space-between;
     border-bottom: solid 0.5px #ffd97931;
+    align-items: center;
     
 }
 

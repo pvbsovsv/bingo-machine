@@ -26,46 +26,53 @@ fetch('https://bingo-servidor.onrender.com/frases')
 /* bingo function */
 let bingoSection = document.querySelector("#bingo-section")
 
+
+  
+
 function newBingo() {
-  
-  console.log(frasesArray[getRandomInt(frasesArray.length)])
-  let numFrases = prompt("Cuantas frases quieres esta semana?")
-
-  /* iteracion para generar las secciones */
-  
   /* generamos container para cada frase */
-  const formContainer = document.createElement("form")
-  
-  for (let i = 0; i <= numFrases-1; i++) {
-    const inputContainer = document.createElement("div")
-    let fraseCliente = document.createElement("label")
-    const tickbox = document.createElement("input")
-    tickbox.setAttribute("type", "checkbox")
+ 
+  let numFrases = parseInt(prompt("Cuantas frases quieres esta semana?"), 10);
 
-   
-      
-      bingoSection.append(formContainer)
-      
-      /* frase de cliente y tick appended al container */
-      formContainer.append(inputContainer)
-      inputContainer.append(fraseCliente)
-      inputContainer.append(tickbox)
-      inputContainer.classList.add("input-container")
+  // Check: avoid requesting more phrases than exist
+  if (numFrases > frasesArray.length) {
+    alert("No hay suficientes frases únicas en el array.");
+    return;
+  }
 
-      /* juntamos frase aleatoria del array */
+  // Shuffle the array (Fisher-Yates shuffle)
+  const shuffledFrases = [...frasesArray];
+  for (let i = shuffledFrases.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledFrases[i], shuffledFrases[j]] = [shuffledFrases[j], shuffledFrases[i]];
+  }
 
-      fraseCliente.innerHTML = frasesArray[getRandomInt(frasesArray.length)]
-      /* adicionamos clases  a elementos nuevos */
-      tickbox.classList.add("tickbox")
-      fraseCliente.classList.add("frase-cliente")
-      formContainer.classList.add("form-container")
-    }
+  const formContainer = document.createElement("form");
+  bingoSection.append(formContainer); // Only once, outside the loop
 
-    
+  for (let i = 0; i < numFrases; i++) {
+    const inputContainer = document.createElement("div");
+    let fraseCliente = document.createElement("label");
+    const tickbox = document.createElement("input");
+    tickbox.setAttribute("type", "checkbox");
+
+    fraseCliente.innerHTML = shuffledFrases[i];
+
+    inputContainer.append(fraseCliente);
+    inputContainer.append(tickbox);
+    inputContainer.classList.add("input-container");
+
+    formContainer.append(inputContainer);
+    /* adicionamos clases  a elementos nuevos */
+    tickbox.classList.add("tickbox")
+    fraseCliente.classList.add("frase-cliente")
+    formContainer.classList.add("form-container")
+  }
 
 }
 
-/* button link */
+  
+  /* button link */
 const buttonBingo =  document.getElementById("buttonBingo")
 
 /* button listener */
