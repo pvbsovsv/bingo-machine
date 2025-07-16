@@ -27,8 +27,6 @@ fetch('https://bingo-servidor.onrender.com/frases')
 let bingoSection = document.querySelector("#bingo-section")
 
 
-  
-
 function newBingo() {
   /* generamos container para cada frase */
  
@@ -84,3 +82,48 @@ bingoSection.innerHTML = ""
 newBingo()
 
 })
+
+
+// Add new sentence Section --------------------------
+
+
+function addNewSentence() {
+
+  let newFrase = prompt("Escribe la frase que quieres adicionar")
+
+  fetch('https://bingo-servidor.onrender.com/frases', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      frase: newFrase  // <- this is the key name the server expects
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("No se pudo enviar la frase.");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Frase añadida con éxito:", data);
+    alert("✅ Frase añadida con éxito");
+  })
+  .catch(error => {
+    console.error("Error al enviar la frase:", error);
+    alert("❌ Hubo un error al enviar la frase.");
+  });
+}
+
+
+const buttonAdd = document.getElementById("buttonAdd"); 
+
+buttonAdd.addEventListener("click", () => {
+
+  addNewSentence()
+
+})
+
+
+
